@@ -1,19 +1,28 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting';
+const pageTitle = 'OK Garden';
 ---
 
-<html lang="en">
+<html lang='en'>
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>OK Garden</title>
+		<meta charset='utf-8' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='viewport' content='width=device-width' />
+		<meta name='generator' content={Astro.generator} />
+		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-		<a href="/blog">Blog</a>
-		<h1>OK Garden</h1>
+		<BaseLayout pageTitle={pageTitle}>
+			<h2>Welcome to my digital Garden</h2>
+			<!-- static, build server side once -->
+			<!-- <Greeting messages={['Howdy', 'Hey there', 'Welcome']} /> -->
+			<!-- dynamic - loaded in client -->
+			<Greeting client:load messages={['Hola', 'Hej', 'Bienvenue']} />
+			<!-- client:visible only sends when the component is visible on the page -->
+		</BaseLayout>
+		<script>
+			import '../scripts/menu.js';
+		</script>
 	</body>
 </html>
