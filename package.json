@@ -1,26 +1,21 @@
 {
-  "name": "ok-garden",
+  "name": "ok-digital-garden",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "preview": "wrangler pages dev ./dist",
+    "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
-    "@astrojs/cloudflare": "^10.2.6",
     "@astrojs/preact": "^3.3.0",
-    "@astrojs/rss": "^4.0.6",
-    "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.9.2",
+    "@astrojs/starlight": "^0.23.2",
+    "astro": "^4.8.6",
     "preact": "^10.22.0",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.3.3"
-  },
-  "devDependencies": {
-    "wrangler": "^3.57.2"
+    "sharp": "^0.32.5",
+    "typescript": "^5.4.5"
   }
 }

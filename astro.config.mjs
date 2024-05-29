@@ -1,13 +1,30 @@
 import { defineConfig } from 'astro/config';
-import preact from "@astrojs/preact";
-import cloudflare from "@astrojs/cloudflare";
+import starlight from '@astrojs/starlight';
 
-import tailwind from "@astrojs/tailwind";
+import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://okcoding.io",
-  integrations: [preact(), tailwind()],
-  output: "server",
-  adapter: cloudflare()
+  integrations: [starlight({
+    title: 'OK Garden',
+    favicon: '/favicon.ico',
+    sidebar: [{
+      label: 'About Me',
+      link: '/about'
+    },
+    // {
+    // 	label: 'Projects',
+    // 	autogenerate: { directory: 'projects' },
+    // },
+    // {
+    // 	label: 'Blog',
+    // 	autogenerate: { directory: 'blog' },
+    // },
+    {
+      label: 'Vennelos',
+      autogenerate: {
+        directory: 'vennelos'
+      }
+    }]
+  }), preact()]
 });

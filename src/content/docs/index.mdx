@@ -1,0 +1,27 @@
+---
+title: Welcome!
+description: This is my digital garden
+template: splash
+hero:
+  tagline: A digital garden that's going to be just OK
+  image:
+    file: ../../assets/splash.png
+  actions:
+    - text: Come on in!
+      link: about
+      icon: right-arrow
+      variant: primary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What can you find here?
+
+<CardGrid stagger>
+	<Card title="Blog" icon="pencil">
+		Read about me and what I've been learning or doing lately
+	</Card>
+	<Card title="D&D" icon="open-book">
+		If you're part of my D&D campaign, you can find notes here
+	</Card>
+</CardGrid>
