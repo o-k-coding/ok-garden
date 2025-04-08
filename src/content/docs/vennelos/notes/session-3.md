@@ -2,6 +2,8 @@
 layout: ../../../../layouts/Guard.astro
 title: Session 3
 description: Notes from session 3, played on 05/18/2024
+sidebar:
+  order: 3
 ---
 ## Active Party Quests
 
